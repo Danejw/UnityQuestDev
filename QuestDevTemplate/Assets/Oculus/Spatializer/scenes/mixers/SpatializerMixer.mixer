@@ -3,8 +3,9 @@
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: SpatializerMixer
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300001}
@@ -21,18 +22,20 @@ AudioMixerController:
     - 725e77d6ee2433b4388bc90340f64b61
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500003}
+  m_TargetSnapshot: {fileID: 245000012928175524}
 --- !u!243 &24300001
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Master
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 725e77d6ee2433b4388bc90340f64b61
   m_Children: []
   m_Volume: 0658889d5c88bf940b82d78b8d39562e
   m_Pitch: 0d4bed6fb113d6f4089b817171a98447
+  m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400002}
   - {fileID: 24482754}
@@ -43,8 +46,9 @@ AudioMixerGroupController:
 --- !u!244 &24400002
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_EffectID: 42ec3f1ef4a750c4386011c7d2e2a267
   m_EffectName: Attenuation
@@ -56,8 +60,9 @@ AudioMixerEffectController:
 --- !u!244 &24482754
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_EffectID: 1d0f44df94bc52146b502b66296662ae
   m_EffectName: OculusSpatializerReflection
@@ -97,16 +102,19 @@ AudioMixerEffectController:
 --- !u!245 &24500003
 AudioMixerSnapshotController:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Snapshot Init
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: a069d6b9a45325b43b6121c1de0b82fa
   m_FloatValues:
+    bea43c001316f514f96f0d98d7421220: 1
     9d315510bbbe3234f81f9ab55034eb95: 0.025578512
     58c9ed10d34cdd24f96279ad753b5c44: 0
     49ea3420a4d17de47999009a7def04ef: 138
     649ec8308d11398408f8b4edb4a345a0: 106
+    ad6f6040664fcff46a783784555f3330: 0.5
     cca26b403b997104bad4d1d8f7dca261: 140
     db11616008472904e881c76426b068d3: 140
     fcdca8708d2305f4593057c665f57be1: 0.438
@@ -116,6 +124,7 @@ AudioMixerSnapshotController:
     6392c38197012994ca13ff3d1d09933e: 0.155
     2bff1f9125a0ac04aa2de5826f284cd1: 0.538
     762f1bc1189ebbb4d826c6561132b46c: 0.38
+    651bdbc17b6e09a488a53902f2fff7d3: 40
     bd705ee11343600419ecb19a2ba1b040: 0.36
     eb9b8ff14fcb5f9488c715e2970b3b22: 0
     f7aab8027052a8e4bbbbfa3e10f77076: 1
@@ -123,10 +132,13 @@ AudioMixerSnapshotController:
     c8aaa722d4ec4154bba4febdb24cb6a9: 0.5
     5873537254a301f4ea13ed21b0eff333: 0.512
     f00e9382c178ba74091552a02191a248: 0.5
+    30d9da82a7456474fa9fc76969abb586: 1
     58edbc339fee35e4396568ee4b4453de: 0.92
     ccd919438ea41b84a8839e71f708afbb: 0.336
     0a3224836f36e1a40a4ede80f5080595: 1
     d65515935f752c649a20a13490f2f9e0: 0
+    6ec714a3efe218c48b1f327d27d92ef5: 1
+    f8bdf9b38e7751d4ab3e51ca229fe356: 55
     03939eb341cc86440a3b7f811113cd27: 0.385
     2cf715c32cf694e4d977b3798f5f8bb2: 90
     d2fdf2145b59fee4595a326c28abd184: 0
@@ -144,6 +156,7 @@ AudioMixerSnapshotController:
     5f0898855add70243aa14b3ea2677074: 1
     01578495ccbabed42984621c044e5d72: 0.97
     77d987a5a23fe9f40bc2a0ef32d60de5: 122
+    0cd2f8c545bf2e647a8a73b60ca01dc3: 0.5
     bd33a706336bb6742960b31b56d6d312: 0
     70fb34464dced4d4fa0fcbc0a9bbcb03: 104
     fd57dbc6c9ab56441b50cb4ec452b383: 0.5
@@ -159,7 +172,10 @@ AudioMixerSnapshotController:
     d26a4918d633cb54fbd7a5b40efe1639: 0.045
     bf51ba384a3c1f646a631feb6aed6c54: 114
     0f0fba6804dba4c4cb19fd30e1223afb: 2.87
+    47a05bd8e57918848ac2b17b7d173fc8: 100
+    eef6fee8c5f1b6541847ebae634f81e0: 0
     f4fa4509dbcb99d46a3b47fb214a8e04: 1
+    aed6760940e4adf41b7fabac16306bb7: 0.5
     56c841194b2fe3040b48cf98706d6e73: 0
     7413dd197ffb07340850468b31fcf1e0: 0.79
     36b1ac29e76462c4586c397a65308888: 0.5
@@ -190,11 +206,13 @@ AudioMixerSnapshotController:
     cc132edbccace48469977b60edca52a5: 0.447
     4cff19eb609afd84992763e1020b8181: 1
     a7077ffb091b65b4dbcb5026128b2c5e: -25
+    debcd30ca1eb41349a7045f27fcf62d2: 35
     c6cc7e2c3e902d94abdabdddc5a41800: 1
     2883db3c75b4127489b7549dabc871af: 0.67
     8998a24c4360c93478ec02f063d9b337: 0
     1033165c48652b34db906f50dde24a50: 0.571
     4a67b18c35650444b90dc3f572846173: 200
+    9474628cdefd7b641b202af2648f316c: 0.5
     917c2e9cef00f3442b1165a1fda7d72a: 0.55
     9760f1cc98e9dd54d9700864efe2f90a: 5
     d779d8cc83e43cc4592a9ba5ce40cb9e: 0.415
@@ -202,10 +220,13 @@ AudioMixerSnapshotController:
     6dc37decaec0c0f468ba6c1fb4f95ebf: 50
     aff67efc612d61b469184c39ea2c6339: 0.2
     5168eefc6d05f3d4d802a585308e8b67: 0.588
+    1773b90d817d32444be56bc30848c124: 0
+    1ac70a7dc648ec94c99c849a866835a4: 0.5
     7812eb7d1a7bba747868c3abff847dac: 0.538
     983c698dea217524c994e7b88f25df7d: 1
     ea47e49d533c4a149a56cf186a4119eb: 110
     0658889d5c88bf940b82d78b8d39562e: 0
+    91c151bd8246c884c8c18e02c0328b3f: 250
     285a82bdfd80bae41b75462603f13baf: 0
     72def6bd2a38a944ead357650153b6b3: 0.441
     da2a1bdd1018dc54ebb2bf2349fbd8c8: 0.07
@@ -218,6 +239,7 @@ AudioMixerSnapshotController:
     3f673d6ec3ebc7040aaabfb340a480ba: 2.0025296
     06e1389e10711584e98e63bcabbba3a4: 0.418
     cad173aee6b7e8c45ac30f9cc5e32b2c: 0
+    f79f0dde54a125a42973a6e653356838: 0.5
     b3b0eede46f5b304ba700843076db719: 0.209
     141e6fde7f4d66a4d9ce1878b64dc199: -28
     b1ed842f163fcae4989e68a530e081fd: 0.47
@@ -231,8 +253,9 @@ AudioMixerSnapshotController:
 --- !u!245 &245000012928175524
 AudioMixerSnapshotController:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Snapshot Interior
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 06ac7339e485edb4182863286808e1fd
@@ -293,7 +316,7 @@ AudioMixerSnapshotController:
     d26a4918d633cb54fbd7a5b40efe1639: 0.045
     bf51ba384a3c1f646a631feb6aed6c54: 114
     0f0fba6804dba4c4cb19fd30e1223afb: 2.87
-    f4fa4509dbcb99d46a3b47fb214a8e04: 0
+    f4fa4509dbcb99d46a3b47fb214a8e04: 1
     56c841194b2fe3040b48cf98706d6e73: 0
     7413dd197ffb07340850468b31fcf1e0: 0.79
     36b1ac29e76462c4586c397a65308888: 0.5

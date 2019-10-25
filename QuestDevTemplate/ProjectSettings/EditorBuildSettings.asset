@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/PlayerControllerTemplate.unity
+    guid: c741ee3ddd07e6a478015c62e11fb75d
+  - enabled: 0
+    path: Assets/Scenes/QuestBasicTemplate.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/SoundTemplate.unity
+    guid: 3840f022fe0f1d6458efa7868f681ee8
   m_configObjects: {}
