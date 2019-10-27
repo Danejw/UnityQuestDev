@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/QuestBasicTemplate.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SoundTemplate.unity
     guid: 3840f022fe0f1d6458efa7868f681ee8
+  - enabled: 1
+    path: Assets/Scenes/SoundTunnelTest.unity
+    guid: b12a26a0ab1b2294a960c0cc5433431a
   m_configObjects: {}
