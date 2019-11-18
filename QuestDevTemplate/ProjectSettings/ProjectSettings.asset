@@ -161,6 +161,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.Company.QuestTemplate
+    Standalone: com.oculus.UnitySample
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 23
@@ -395,13 +396,14 @@ PlayerSettings:
     m_Automatic: 1
   m_BuildTargetVRSettings:
   - m_BuildTarget: Standalone
-    m_Enabled: 0
+    m_Enabled: 1
     m_Devices:
     - Oculus
     - OpenVR
   - m_BuildTarget: Android
     m_Enabled: 1
     m_Devices:
+    - OpenVR
     - Oculus
   m_BuildTargetEnableVuforiaSettings: []
   openGLRequireES31: 0
@@ -639,7 +641,8 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: NVR_Oculus;NVR_SteamVR
   platformArchitecture: {}
   scriptingBackend:
     Android: 1

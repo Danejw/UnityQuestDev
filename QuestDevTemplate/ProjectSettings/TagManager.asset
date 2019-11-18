@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Grabbable
+  - Static
+  - Interactable
+  - Metal
+  - Target
+  - ExplosiveBarrel
+  - Ammo
   layers:
   - Default
   - TransparentFX
@@ -14,8 +20,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Static
+  - Distance Grabbable
   - 
   - 
   - 
@@ -41,4 +47,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3424564045
+    locked: 0
+  - name: Enviroment
+    uniqueID: 3799068227
     locked: 0
