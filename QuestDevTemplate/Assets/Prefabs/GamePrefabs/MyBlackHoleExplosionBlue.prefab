@@ -14543,7 +14543,7 @@ MonoBehaviour:
   prefabSound: {fileID: 1297775994297274, guid: b3c605644a3980b4aa760e7cb1da201b,
     type: 3}
   destroyWhenDone: 1
-  soundPrefabIsChild: 0
+  soundPrefabIsChild: 1
   pitchRandomMultiplier: 1
 --- !u!1 &4340116530673588975
 GameObject:

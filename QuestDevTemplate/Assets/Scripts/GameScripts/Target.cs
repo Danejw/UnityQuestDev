@@ -7,6 +7,8 @@ public class Target : MonoBehaviour
 
     public static event OnTargetDestroyed TargetDestroyed;
 
+    public GameObject explosion;
+
 
     // if anything collides with the target, Invoke the Target Destroyed Event
     private void OnCollisionEnter(Collision collision)
@@ -21,9 +23,13 @@ public class Target : MonoBehaviour
                 //play sound
 
                 //explode?
+                if (explosion)
+                {
+                    Instantiate(explosion, transform.position, Quaternion.identity, this.transform);
+                }
 
                 //destroy object
-                Destroy(gameObject, .5f);
+                Destroy(gameObject, .7f);
             }
         }
     }

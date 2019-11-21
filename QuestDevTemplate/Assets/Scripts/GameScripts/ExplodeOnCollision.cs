@@ -8,7 +8,7 @@ public class ExplodeOnCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Static")
+        if(collision.gameObject.tag == "Static" || collision.gameObject.tag == "Target")
         {
             GameObject newExplosion = GameObject.Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(newExplosion, 3f);

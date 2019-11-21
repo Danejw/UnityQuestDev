@@ -6,7 +6,7 @@ public class DestroyOnCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Static")
+        if(collision.gameObject.tag == "Static" || collision.gameObject.tag == "Target")
         {
             Destroy(this.gameObject, timeTillDestroy);
         }

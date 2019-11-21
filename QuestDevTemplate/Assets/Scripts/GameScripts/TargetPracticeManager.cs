@@ -37,7 +37,7 @@ public class TargetPracticeManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         if (startGame)
         {
             StartGame(); 
@@ -67,6 +67,7 @@ public class TargetPracticeManager : MonoBehaviour
         // Hide Superpower UI
         if (UI != null) { UI.SetActive(false); }
         // Game On
+        startGame = true;
         isGameOn = true;
         //reset Round #
         round = 0;
@@ -148,26 +149,29 @@ public class TargetPracticeManager : MonoBehaviour
         }
     }
 
-    void EndGame()
+    public void EndGame()
     {
-        // GameOver
-        isGameOn = false;
+        if (isGameOn)
+        {
+            //Destroy All Targets
+            DestroyAllTargets();
 
-        //Destroy All Targets
-        DestroyAllTargets();
+            // Reset timer
+            timeElapsed = 0;
 
-        // Display Superpower UI
-        if(UI != null) { UI.SetActive(true); }
-        
-        //Display Stats
+            // Display Superpower UI
+            if (UI != null) { UI.SetActive(true); }
 
+            // GameOver
+            isGameOn = false;
+        }
     }
 
 
     // Utility Methods
     Vector3 GetRandomPosition()
     {  
-        Vector3 randomPos = new Vector3( Random.Range(-35, 35), Random.Range(-1, 40), Random.Range(-35, 35
+        Vector3 randomPos = new Vector3( Random.Range(-15, 15), Random.Range(-1, 20), Random.Range(-15, 15
 ));
         return randomPos;
     }
