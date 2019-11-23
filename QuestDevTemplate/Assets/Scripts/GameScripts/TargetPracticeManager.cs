@@ -1,10 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class TargetPracticeManager : MonoBehaviour
 {
     // Variable for UI and Stats
-    [HideInInspector]
-    public int targetsDestroyed = 0;
     [HideInInspector]
     public int totalTargetsDestroyed = 0;
     [HideInInspector]
@@ -24,6 +24,10 @@ public class TargetPracticeManager : MonoBehaviour
 
     public bool startGame = false;
 
+    // used for second interval timer
+    private float nextActionTime = 0;
+    private float interval = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +35,6 @@ public class TargetPracticeManager : MonoBehaviour
         Target.TargetDestroyed += TargetDestroyed;
 
         timeElapsed = 0;
-        targetsDestroyed = 0;
         totalTargetsDestroyed = 0;
     }
 
@@ -47,7 +50,14 @@ public class TargetPracticeManager : MonoBehaviour
         { 
             // Start Timer
             AddToTime();
-            
+
+            // Check and collect targets into array every second interval
+            if (Time.time > nextActionTime)
+            {
+                nextActionTime += interval;
+                CollectTargets();
+            }
+
             //  Next Round of Targets
             if (AllTargetsDestroyed())
             {
@@ -55,10 +65,10 @@ public class TargetPracticeManager : MonoBehaviour
             }
 
             // Game Over
-            if(timeElapsed >= endGameTime)
+            if (timeElapsed >= endGameTime)
             {
                 EndGame();
-            }
+            }    
         }
     }
 
@@ -66,13 +76,14 @@ public class TargetPracticeManager : MonoBehaviour
     {
         // Hide Superpower UI
         if (UI != null) { UI.SetActive(false); }
-        // Game On
+        // Init Game
         startGame = true;
-        isGameOn = true;
-        //reset Round #
+        //init start game data
         round = 0;
-        // reset Total Targets Destroyed
+        amtOfTargets = 4;
         totalTargetsDestroyed = 0;
+        // Game On
+        isGameOn = true;
         // Create Targets
         NewRound();
         startGame = false;
@@ -81,10 +92,10 @@ public class TargetPracticeManager : MonoBehaviour
     void NewRound()
     {
         if (isGameOn)
-        {
+        {    
             AddToTargetAmt();
-            ResetTargetsDestroyed();
             round += 1;
+            StartCoroutine(WaitSeconds(1));
             CreateTargets();
         }
     }
@@ -119,13 +130,12 @@ public class TargetPracticeManager : MonoBehaviour
     void TargetDestroyed()
     {
         totalTargetsDestroyed += 1;
-        targetsDestroyed += 1;
     }
 
     // Check if all targets are destroyed
     bool AllTargetsDestroyed()
     {
-        if (targetsDestroyed >= amtOfTargets)
+        if (CollectTargets() == 0)
         {
             return true;
         }
@@ -133,11 +143,6 @@ public class TargetPracticeManager : MonoBehaviour
         {
             return false;
         }
-    }
-
-    void ResetTargetsDestroyed()
-    {
-        targetsDestroyed = 0;
     }
 
     void DestroyAllTargets()
@@ -171,8 +176,20 @@ public class TargetPracticeManager : MonoBehaviour
     // Utility Methods
     Vector3 GetRandomPosition()
     {  
-        Vector3 randomPos = new Vector3( Random.Range(-15, 15), Random.Range(-1, 20), Random.Range(-15, 15
-));
+        Vector3 randomPos = new Vector3( Random.Range(-15, 15), Random.Range(-1, 20), Random.Range(-15, 15));
         return randomPos;
+    }
+
+
+    //Collects all objects with tag "Target" and add them to a list
+    private int CollectTargets()
+    {
+        GameObject[] targetArray = GameObject.FindGameObjectsWithTag("Target");
+        return targetArray.Length;
+    }
+
+    IEnumerator WaitSeconds(int time)
+    {
+        yield return new WaitForSeconds(time);
     }
 }

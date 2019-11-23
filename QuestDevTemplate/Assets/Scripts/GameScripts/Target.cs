@@ -20,17 +20,35 @@ public class Target : MonoBehaviour
                 //Trigger event
                 TargetDestroyed.Invoke();
 
+                gameObject.GetComponent<Collider>().enabled = false;
+
                 //play sound
 
-                //explode?
+                //explode
                 if (explosion)
                 {
                     Instantiate(explosion, transform.position, Quaternion.identity, this.transform);
                 }
 
                 //destroy object
-                Destroy(gameObject, .7f);
+                Destroy(this.gameObject, .7f);
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "InnerBoundary")
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "OuterBoundary")
+        {
+            Destroy(this.gameObject);
         }
     }
 }
